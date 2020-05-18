@@ -1,0 +1,84 @@
+<div class='side-menu'>
+    <li class="list-group-item p-left pointer">
+        <img class="icon-image" src="../assets/Menu Icons/menu.svg" alt="" (click)='onMenuClick()' />
+    </li>
+    <div [ngClass]=" isCollapsed 
+    ? 'menu-w-6 animation overflow-hidden'
+    : 'menu-w-0 animation overflow-hidden' ">
+        <ul class="list-group list-group-flush menu-w-6  z-index-0">
+            <li routerLinkActive='active' class='list-group-item hover' routerLink="./home">
+                <a class='d-flex'>
+                    <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/home.png" alt="" /></span>
+                    <div [ngClass]="isCollapsed ? 'd-flex w-100 animation' : 'd-none animation'">
+                        <span class="text mr-2">home</span>
+                        <span class="align-self-center badge badge-light"></span>
+                    </div>
+                </a>
+            </li>
+            <li routerLinkActive='active' class='list-group-item hover' routerLink="./details">
+                <a class='d-flex'>
+                    <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/Tasklist.svg" alt="" /></span>
+                    <div [ngClass]="isCollapsed ? 'd-flex w-100 animation' : 'd-none animation'">
+                        <span class="text mr-2">MenuItem-1</span>
+                        <span class="align-self-center badge badge-light">25</span>
+                    </div>
+                </a>
+            </li>
+            <li routerLinkActive='active' class='list-group-item hover' routerLink="#">
+                <a class='d-flex'>
+                    <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/recomm.png" alt="" /></span>
+                    <div [ngClass]="isCollapsed ? 'd-flex w-100 animation' : 'd-none animation'">
+                        <span class="text mr-2">MenuItem-2</span>
+                        <span class="align-self-center badge badge-light">07</span>
+                    </div>
+                </a>
+            </li>
+            <li routerLinkActive='active' class='list-group-item hover' routerLink="1#">
+                <a class='d-flex'>
+                    <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/Priority.svg" alt="" /></span>
+                    <div [ngClass]="isCollapsed ? 'd-flex w-100 animation' : 'd-none animation'">
+                        <span class="text mr-2">MenuItem-3</span>
+                        <span class="align-self-center badge badge-light"></span>
+                    </div>
+                </a>
+            </li>
+            <li routerLinkActive='active' class='list-group-item hover' routerLink="2#">
+                <a class='d-flex'>
+                    <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/Pending.svg" alt="" /></span>
+                    <div [ngClass]="isCollapsed ? 'd-flex w-100 animation' : 'd-none animation'">
+                        <span class="text mr-2">MenuItem-4</span>
+                        <span class="align-self-center badge badge-light"></span>
+                    </div>
+                </a>
+            </li>
+            <li routerLinkActive='active' class='list-group-item hover' routerLink="3#">
+                <a class='d-flex'>
+                    <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/myactivity.svg" alt="" /></span>
+                    <div [ngClass]="isCollapsed ? 'd-flex w-100 animation' : 'd-none animation'">
+                        <span class="text mr-2">MenuItem-5</span>
+                        <span class="align-self-center badge badge-light"></span>
+                    </div>
+                </a>
+            </li>
+            <li routerLinkActive='active' class='list-group-item hover' routerLink="4#">
+                <a class='d-flex'>
+                    <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/Messages.svg" alt="" /></span>
+                    <div [ngClass]="isCollapsed ? 'd-flex w-100 animation' : 'd-none animation'">
+                        <span class="text mr-2">MenuItem-6</span>
+                        <span class="align-self-center badge badge-light"></span>
+                    </div>
+                </a>
+            </li>
+            <li routerLinkActive='active' class='list-group-item hover' routerLink="/login">
+                <a class='d-flex'>
+                    <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/logout.svg" alt="" /></span>
+                    <div [ngClass]="isCollapsed ? 'd-flex w-100 animation' : 'd-none animation'">
+                        <span class="text mr-2">Logout</span>
+                        <span class="align-self-center badge badge-light"></span>
+                    </div>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>

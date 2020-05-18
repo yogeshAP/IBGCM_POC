@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "IBGCM": {
+    "POC": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/IBGCM",
+            "outputPath": "dist/POC",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "IBGCM:build"
+            "browserTarget": "POC:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "IBGCM:build:production"
+              "browserTarget": "POC:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "IBGCM:build"
+            "browserTarget": "POC:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "IBGCM:serve"
+            "devServerTarget": "POC:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "IBGCM:serve:production"
+              "devServerTarget": "POC:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "IBGCM"
+  "defaultProject": "POC"
 }

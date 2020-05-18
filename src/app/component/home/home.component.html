@@ -1,0 +1,66 @@
+<div class="home_page w-100 bg1-color">
+    <div class="container-fluid">
+        <div class='nonfixed_row flex-column'>
+            <div class="app-title">
+                <h1 class='h3'>My Dashboard</h1>
+            </div>
+            <div class='row'>
+                <div class="col-4">
+                    <div class="card px-0">
+                        <div class="card-header bg-task">
+                            <div class="d-flex align-items-center">
+                                <div class="g-h-icon1"><img alt="" src='assets/my_task.png' /></div>
+                                <div class="g-h-text mx-2 text-white font-weight-bold">My Task 1</div>
+                                <div class="g-h-icon2 ml-auto"><img alt="" src="assets/drag&drop.png" /></div>
+                              </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="graph">
+                                <app-donutgraph [data]="myTaskData" [labels]="myTaskLabels" [bgColors]="myTaskBgColors">
+                                </app-donutgraph>
+                                <div class="settings_icon"><img src="../../assets/Outline.png" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header bg-pending">
+                            <div class="d-flex align-items-center">
+                                <div class="g-h-icon1"><img alt="" src='../assets/Pending_Cases.png' /></div>
+                                <div class="g-h-text mx-2 text-white font-weight-bold">My Task 2</div>
+                                <div class="g-h-icon2 ml-auto"><img alt="" src="assets/drag&drop.png" /></div>
+                              </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="graph">
+                                <app-donutgraph-pending [data]="pendingData" [labels]="pendingLabels"
+                                [bgColors]="pendingBgColors">
+                                </app-donutgraph-pending>
+                                <div class="settings_icon"><img src="../../assets/Outline.png" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header bg-priority">
+                            <div class="d-flex align-items-center">
+                                <div class="g-h-icon1"><img alt="" src='../assets/priority_Cases.png' /></div>
+                                <div class="g-h-text mx-2 text-white font-weight-bold">My Task 3</div>
+                                <div class="g-h-icon2 ml-auto"><img alt="" src="assets/drag&drop.png" /></div>
+                              </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="graph">
+                                <app-donutgraph-priority [data]="prorityData" [labels]="prorityLabels" [bgColors]="prorityBgColors">
+                                </app-donutgraph-priority>
+                                <div class="settings_icon"><img src="../../assets/Outline.png" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

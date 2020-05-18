@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+
+$bg1-color: #00aed4;
+$text1-color: #186096;
+
+$task: #00b7d9;
+$pending: #76dab5;
+$priority: #ef8449;
+
+.bg-task{background-color: $task;}
+.bg-pending{background-color: $pending;}
+.bg-priority{background-color: $priority;}
+
+
+.bg-btn1{background: $bg1-color;}
+.text1-color{color: $text1-color;}
+.text2-color{color: $bg1-color;}
+
+
+
+html, body{
+    background-color: #f0f0f0;
+}
+.contain_wrapper {
+    overflow: scroll;
+}
+
+.animation{
+    transition: flex .5s, max-width .5s, display .5s, width .5s;
+    transition-timing-function: linear;
+}
+
+canvas#doughtnut, #doughtnut2, #doughtnut1 {
+    height: 200px !important;
+}
+
+.graph_labels{
+    font-size: 12px;
+}
+
+.g_title {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 9rem;
+    
+    .value{
+        font-size: 2.5rem;
+          height: 50px;
+          font-weight: 600;
+          font-family: sans-serif !important;
+      }
+    .total{
+        font-size: 16px;
+        font-weight: 600;
+      }  
+}
