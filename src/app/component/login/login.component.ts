@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   signInForm:FormGroup;
   userId:string="";
   password:string="";
+  userInvaid:boolean = false;
   constructor(private router: Router, private formBuilder:FormBuilder) { 
       this.signInForm = formBuilder.group(
         {
@@ -34,7 +35,8 @@ export class LoginComponent implements OnInit {
     if (this.userId =='Bhanu' && this.password == 'Bhanu@123'){
       this.router.navigate(['/dashboard']);
     } else{
-      alert('Wrong Username and Password');
+      // alert('Wrong Username and Password');
+      this.userInvaid = true;
     }
     
   }

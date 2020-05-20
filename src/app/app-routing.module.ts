@@ -5,6 +5,8 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { DetailsComponent } from './component/details/details.component';
 import { PNFComponent } from './component/pnf/pnf.component';
 import { HomeComponent } from './component/home/home.component';
+import { AuthGuard } from './guards/auth/auth.guard';
+import { ConfirmationGuard } from './guards/confirmation/confirmation.guard';
 
 
 const routes: Routes = [
@@ -12,16 +14,18 @@ const routes: Routes = [
   
   { path: 'dashboard', 
     component: DashboardComponent, 
+    canActivate: [AuthGuard],
+    canDeactivate: [ConfirmationGuard],
     children: [
       
-      { path: 'home', component: HomeComponent },
+      { path: 'home', component: HomeComponent},
       { path: 'details', component: DetailsComponent },  
       { path: '', redirectTo:'home', pathMatch:'full'},  
       { path: '**', component: PNFComponent }
     ]
   },
   
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent,},
   { path: '**', redirectTo:'/login', pathMatch:'full' }
 
 
@@ -29,6 +33,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard, ConfirmationGuard]
 })
 export class AppRoutingModule { }

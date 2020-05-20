@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientModule  } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
@@ -17,6 +19,10 @@ import { DonutgraphComponent } from './component/donutgraph/donutgraph.component
 import { DonutgraphPendingComponent } from './component/donutgraph-pending/donutgraph-pending.component';
 import { DonutgraphPriorityComponent } from './component/donutgraph-priority/donutgraph-priority.component';
 import { HomeComponent } from './component/home/home.component';
+
+import { TestData } from './database/testData';
+
+import { DummyDataService } from './providers/data/dummy-data.service';
 
 @NgModule({
   declarations: [
@@ -39,9 +45,11 @@ import { HomeComponent } from './component/home/home.component';
     BrowserAnimationsModule,
     NgxChartsModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    InMemoryWebApiModule.forRoot(TestData)
   ],
-  providers: [],
+  providers: [DummyDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

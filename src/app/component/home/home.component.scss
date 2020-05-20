@@ -14,4 +14,36 @@
     float: right;
     color: #707070;
     font-size: 0.867rem;
-  }
+}
+
+.chart-wrapper .card{
+    cursor: pointer;
+}
+.card-active {
+    padding-bottom: 15px;
+    border-bottom: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    z-index: 1;
+}
+
+.table-card{
+    position: relative;
+    bottom: 2px;
+}
+
+.border-t-l-0{
+    border-top-left-radius:0px;
+}
+
+.border-t-r-0{
+    border-top-left-radius:0px;
+}
+
+.border-b-l-0{
+    border-bottom-left-radius:0px;
+}
+
+.border-b-r-0{
+    border-bottom-right-radius:0px;
+}
