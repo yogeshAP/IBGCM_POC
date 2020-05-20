@@ -19,10 +19,18 @@ export class HomeComponent implements OnInit {
   prorityLabels : any[] = ['Item-1', 'Item-2','Item-3'];
   prorityBgColors :  any[] = ['#dd4955', '#2acd72','#fac751'];
 
-
+  todayDate:any = new Date();
+  users:any[];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  userEditData(userId){
+
+  }
+  deleteUser(userId){
+
   }
 
 }

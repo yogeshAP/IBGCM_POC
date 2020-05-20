@@ -1,8 +1,11 @@
 <div class="home_page w-100 bg1-color">
     <div class="container-fluid">
         <div class='nonfixed_row flex-column'>
-            <div class="app-title">
-                <h1 class='h3'>My Dashboard</h1>
+            <div class="app-title md-5 d-flex justify-content-between">
+                <h1 class='h5'>My Dashboard</h1>
+                <div class="date-filter">
+                    <span>{{todayDate|  date:'fullDate'}}</span> <i className="far fa-calendar-alt"></i>
+                </div>
             </div>
             <div class='row'>
                 <div class="col-4">
@@ -12,7 +15,7 @@
                                 <div class="g-h-icon1"><img alt="" src='assets/my_task.png' /></div>
                                 <div class="g-h-text mx-2 text-white font-weight-bold">My Task 1</div>
                                 <div class="g-h-icon2 ml-auto"><img alt="" src="assets/drag&drop.png" /></div>
-                              </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="graph">
@@ -30,12 +33,12 @@
                                 <div class="g-h-icon1"><img alt="" src='../assets/Pending_Cases.png' /></div>
                                 <div class="g-h-text mx-2 text-white font-weight-bold">My Task 2</div>
                                 <div class="g-h-icon2 ml-auto"><img alt="" src="assets/drag&drop.png" /></div>
-                              </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="graph">
                                 <app-donutgraph-pending [data]="pendingData" [labels]="pendingLabels"
-                                [bgColors]="pendingBgColors">
+                                    [bgColors]="pendingBgColors">
                                 </app-donutgraph-pending>
                                 <div class="settings_icon"><img src="../../assets/Outline.png" /></div>
                             </div>
@@ -49,13 +52,52 @@
                                 <div class="g-h-icon1"><img alt="" src='../assets/priority_Cases.png' /></div>
                                 <div class="g-h-text mx-2 text-white font-weight-bold">My Task 3</div>
                                 <div class="g-h-icon2 ml-auto"><img alt="" src="assets/drag&drop.png" /></div>
-                              </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="graph">
-                                <app-donutgraph-priority [data]="prorityData" [labels]="prorityLabels" [bgColors]="prorityBgColors">
+                                <app-donutgraph-priority [data]="prorityData" [labels]="prorityLabels"
+                                    [bgColors]="prorityBgColors">
                                 </app-donutgraph-priority>
                                 <div class="settings_icon"><img src="../../assets/Outline.png" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Users List
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col"></th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- <tr *ngFor='let user of users; index as i '> -->
+                                        <tr>
+                                            <td>1</td>
+                                            <td>BHanu</td>
+                                            <td>Bhanu@gmail.com</td>
+                                            <td>
+                                                <button type="button" class="btn btn-success mx-2"
+                                                    (click)='userEditData(1)'>Edit</button>
+                                                <button type="button" class="btn btn-danger mx-2"
+                                                    (click)='deleteUser(1)'>Delete</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
