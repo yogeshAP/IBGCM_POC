@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
 })
 
-export class DetailsService{
+export class TransactionService{
     constructor(private http: HttpClient){
 
     }

@@ -19,9 +19,13 @@ import { DonutgraphPriorityComponent } from './component/donutgraph-priority/don
 import { HomeComponent } from './component/home/home.component';
 import {AgGridModule} from 'ag-grid-angular';
 import {HttpClientModule} from '@angular/common/http';
+import { TransactonListComponent } from './component/transaction-list/transaction-list.component';
+import { TransactionChartsComponent } from './component/transaction-charts/transaction-charts.component';
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
+    TransactonListComponent,
     LoginComponent,
     SideMenuComponent,
     HeaderComponent,
@@ -32,7 +36,8 @@ import {HttpClientModule} from '@angular/common/http';
     DonutgraphComponent,
     DonutgraphPendingComponent,
     DonutgraphPriorityComponent,
-    HomeComponent
+    HomeComponent,
+    TransactionChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,8 @@ import {HttpClientModule} from '@angular/common/http';
     NgxChartsModule,
     FormsModule, 
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

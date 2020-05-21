@@ -5,6 +5,8 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { DetailsComponent } from './component/details/details.component';
 import { PNFComponent } from './component/pnf/pnf.component';
 import { HomeComponent } from './component/home/home.component';
+import { TransactonListComponent } from './component/transaction-list/transaction-list.component';
+import { TransactionChartsComponent } from './component/transaction-charts/transaction-charts.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,9 @@ const routes: Routes = [
     children: [
       
       { path: 'home', component: HomeComponent },
-      { path: 'details', component: DetailsComponent },  
+      { path: 'details', component: DetailsComponent },
+      {path: 'transaction', component: TransactonListComponent},
+      {path: 'charts',component: TransactionChartsComponent},
       { path: '', redirectTo:'home', pathMatch:'full'},  
       { path: '**', component: PNFComponent }
     ]

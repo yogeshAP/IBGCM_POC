@@ -24,6 +24,22 @@
                     </div>
                 </a>
             </li>
+            <li routerLinkActive='active' class='list-group-item hover' routerLink="./transaction">
+                <a class='d-flex'>
+                    <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/Tasklist.svg" alt="" /></span>
+                    <div [ngClass]="isCollapsed ? 'd-flex w-100 animation' : 'd-none animation'">
+                        <span class="text mr-2">Transaction</span>
+                    </div>
+                </a>
+            </li>
+            <li routerLinkActive='active' class='list-group-item hover' routerLink="./charts">
+                <a class='d-flex'>
+                    <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/Tasklist.svg" alt="" /></span>
+                    <div [ngClass]="isCollapsed ? 'd-flex w-100 animation' : 'd-none animation'">
+                        <span class="text mr-2">Charts</span>
+                    </div>
+                </a>
+            </li>
             <li routerLinkActive='active' class='list-group-item hover' routerLink="#">
                 <a class='d-flex'>
                     <span class='d-inline-block mr-3'><img class="icon-image" src="../assets/Menu Icons/recomm.png" alt="" /></span>
