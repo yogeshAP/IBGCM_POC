@@ -1,73 +1,13 @@
 <div class="home_page w-100 bg1-color">
     <div class="container-fluid">
-        <div class='nonfixed_row flex-column'>
-            <div class="app-title">
-                <h1 class='h3'>Details</h1>
+        <div class=''>
+            <div class="app-title d-flex justify-content-between">
+                <h1 class='h5'>Task List</h1>
             </div>
-            <div class="row mt-3">
+            <div class="row mt-2">
                 <div class="col-12">
                     <div class="dataForm text-center">
-                        <p *ngIf='datasaved' ngClass="text-success">
-                            Record saved successfully.
-                        </p>
-                        <form class="form-login bg-white" 
-                        [formGroup]='dataForm' 
-                        (ngSubmit)="onFormSubmit(dataForm)">
-                            <!-- <div class="form-group">
-                                <img src="../../../assets/logo.png">
-                            </div> -->
-                            <!-- <div class="form-group">
-                                <div class="userid input-group flex-nowrap border-bottom">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-transparent border-0" id="addon-wrapping">
-                                            <i class="far fa-id-badge"></i>
-                                        </span>
-                                    </div>
-                                    <input type="text" formControlName='id' class="form-control border-0"
-                                        placeholder="id auto genrated" aria-label="UserID" readonly aria-describedby="addon-wrapping">
-                                </div>
-                            </div> -->
-                            <div class="form-group">
-                                <div class="input-group flex-nowrap border-bottom">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-transparent border-0" id="addon-wrapping">
-                                            <i class="far fa-user-circle"></i>
-                                        </span>
-                                    </div>
-                                    <input type="text" formControlName='name' class="form-control border-0"
-                                        placeholder="name">
-                                </div>
-                            </div>
-                            <!-- <div class="form-group">
-                                <div class="input-group flex-nowrap border-bottom">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-transparent border-0" id="addon-wrapping">
-                                            <i class="fas fa-venus-mars"></i>
-                                        </span>
-                                    </div>
-                                    <select formControlName='gender' class="form-control border-0">
-                                        <option selected>Gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="male">Female</option>
-                                      </select>
-                                </div>
-                            </div> -->
-                            <div class="form-group">
-                                <div class="input-group flex-nowrap border-bottom">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-transparent border-0" id="addon-wrapping">
-                                            <i class="far fa-envelope"></i>
-                                        </span>
-                                    </div>
-                                    <input type="email" formControlName='email' class="form-control border-0"
-                                        placeholder="Email">
-                                </div>
-                            </div>
 
-                            <button type="submit" class="btn bg-btn1  text-white"
-                                [disabled]='!dataForm.valid'>Submit</button>
-                            <button type="submit" class="btn bg-danger  text-white mx-2 d-none" [disabled]>Edit</button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -76,6 +16,13 @@
                     <div class="card">
                         <div class="card-header">
                             Users List
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                data-target="#FormModel">
+                                Add User
+                            </button>
+
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -95,8 +42,12 @@
                                             <td>{{user.name}}</td>
                                             <td>{{user.email}}</td>
                                             <td>
-                                                <button type="button" class="btn btn-success mx-2" (click)='userEditData(user.id)'>Edit</button>
-                                                <button type="button" class="btn btn-danger mx-2" (click)='modelUser(user)' data-toggle="modal" data-target="#exampleModalCenter">
+                                                <button type="button" class="btn btn-success mx-2"
+                                                    (click)='userEditData(user.id)' data-toggle="modal"
+                                                    data-target="#FormModel">Edit</button>
+                                                <button type="button" class="btn btn-danger mx-2"
+                                                    (click)='modelUser(user)' data-toggle="modal"
+                                                    data-target="#exampleModalCenter">
                                                     Delete
                                                 </button>
                                             </td>
@@ -113,17 +64,82 @@
 </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- Modal for Delete data -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-body text-center">
-            Do you really want to delete data
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                Do you really want to delete data
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" (click)='deleteUser(deleteuser.id)' class="btn btn-success"
+                    data-dismiss="modal">Yes</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+            </div>
         </div>
-        <div class="modal-footer d-flex justify-content-center">
-            <button type="button" (click)='deleteUser(deleteuser.id)' class="btn btn-success" data-dismiss="modal">Yes</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+
+
+
+
+<!-- Modal for Form -->
+<div class="modal fade" id="FormModel" tabindex="-1" role="dialog" aria-labelledby="FormModel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">User Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)='dataformreset()'>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p *ngIf='datasaved' ngClass="text-center text-success">
+                    Record saved successfully.
+                </p>
+                <form class="form-login bg-white" [formGroup]='dataForm' (ngSubmit)="onFormSubmit(dataForm)">
+                    <div class="form-group">
+                        <div class="input-group flex-nowrap border-bottom">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-transparent border-0" id="addon-wrapping">
+                                    <i class="far fa-user-circle"></i>
+                                </span>
+                            </div>
+                            <input type="text" formControlName='name' class="form-control border-0" placeholder="name">
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+                    <div class="input-group flex-nowrap border-bottom">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0" id="addon-wrapping">
+                                <i class="fas fa-venus-mars"></i>
+                            </span>
+                        </div>
+                        <select formControlName='gender' class="form-control border-0">
+                            <option selected>Gender</option>
+                            <option value="male">Male</option>
+                            <option value="male">Female</option>
+                          </select>
+                    </div>
+                </div> -->
+                    <div class="form-group">
+                        <div class="input-group flex-nowrap border-bottom">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-transparent border-0" id="addon-wrapping">
+                                    <i class="far fa-envelope"></i>
+                                </span>
+                            </div>
+                            <input type="email" formControlName='email' class="form-control border-0"
+                                placeholder="Email">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn bg-btn1  text-white" [disabled]='!dataForm.valid'>Submit</button>
+                    <button type="button" class="btn btn-danger mx-2" data-dismiss="modal"
+                        (click)='dataformreset()'>Close</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

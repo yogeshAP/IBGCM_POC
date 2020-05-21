@@ -1,13 +1,13 @@
 <div class="home_page w-100 bg1-color">
     <div class="container-fluid">
-        <div class='nonfixed_row flex-column'>
-            <div class="app-title md-5 d-flex justify-content-between">
+        <div class=''>
+            <div class="app-title mb-3 d-flex justify-content-between">
                 <h1 class='h5'>My Dashboard</h1>
                 <div class="date-filter">
-                    <span>{{todayDate|  date:'fullDate'}}</span> <i className="far fa-calendar-alt"></i>
+                    <span>{{todayDate|  date:'fullDate'}}</span> <i class="far fa-calendar-alt ml-1"></i>
                 </div>
             </div>
-            <div class='row chart-wrapper'>
+            <div class='row mt-2 chart-wrapper'>
                 <div class="col-4">
                     <div class="card px-0" [ngClass]="{'card-active' : task1}" (click)='mytask1()'>
                         <div class="card-header bg-task">
@@ -89,7 +89,8 @@
                                             <td>{{user.name}}</td>
                                             <td>{{user.email}}</td>
                                             <td>
-                                                <button routerLink="../details" type="button" class="btn btn-success mx-2">view</button>
+                                                <button routerLink="../details" type="button"
+                                                    class="btn btn-success mx-2">view</button>
                                             </td>
                                         </tr>
                                     </tbody>

@@ -5,9 +5,32 @@
             <app-side-menu></app-side-menu>
         </div>
         <div class='contain_wrapper w-100 pt-2'>
+            <!-- <button type="button" (click)='openModal()' class="btn btn-success" >new modal</button> -->
             <!-- <app-home></app-home> -->
             <router-outlet></router-outlet>
         </div>
     </main>
     <app-footer class='d-flex'></app-footer>
+</div>
+
+<!-- Modal For logout -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModal" aria-hidden="true"
+    #content>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                Do you really want to logout
+            </div>
+            <!-- <div class="modal-footer d-flex justify-content-center">
+                <button type="button" (click)='canLogOut(true)' class="btn btn-success"
+                    data-dismiss="modal">Yes</button>
+                <button type="button" (click)='canLogOut(false)' class="btn btn-danger" data-dismiss="modal">No</button>
+            </div> -->
+            <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn btn-success"
+                    data-dismiss="modal">Yes</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
 </div>

@@ -8,6 +8,14 @@ export class UserAuthService {
   constructor() { }
 
   authenticationCheck(){
-    return true;
+    if(sessionStorage.length>0){
+      console.log('sessionStorage.length true', sessionStorage.length)
+      return true;
+    }
+    else{
+      console.log('sessionStorage.length false', sessionStorage.length)
+      return false;
+    }
+    
   }
 }
