@@ -34,13 +34,15 @@ export class TransactonListComponent implements OnInit {
 rowData:any;
 
   ngOnInit(): void {
-    this.detailService.getDetails().subscribe({
-      next: data=> {
-        console.log("rowData" + data);
-        this.rowData=data;
-
-      }
-    })
+    
+    this.rowData = this.detailService.getDetails();
+    console.log('this.rowData', this.rowData);
+    // this.detailService.getDetails().subscribe({
+    //   next: data=> {
+    //     console.log("rowData" + data);
+    //     this.rowData=data;
+    //   }
+    // })
   }
 
   getSelectedRows() {

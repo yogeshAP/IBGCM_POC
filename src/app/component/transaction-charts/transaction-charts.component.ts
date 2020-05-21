@@ -13,17 +13,25 @@ import { TransactionService } from '../transaction-list/transaction-list.service
 
 export class TransactionChartsComponent implements OnInit{
         chartData: any;
-        chartAmount: any;
+        chartAmount: any[] = [];
         chartArray:any;
-    constructor(private chartservice: TransactionService) { }
+    constructor(private detailService: TransactionService) { }
     ngOnInit() {
-        this.chartservice.getDetails().subscribe({
-            next: data=> {
-              console.log("rowData" + data);
-              this.chartData=data;
-            }
-          })
-          this.cal(this.chartData);
+      this.detailService.getDetails().forEach(data=>
+        {
+          console.log('chart data', data.amount) ;
+          this.chartAmount.push(data.amount);
+
+
+        })  
+      console.log('this.chartAmount', this.chartAmount);
+      // this.chartservice.getDetails().subscribe({
+        //     next: data=> {
+        //       console.log("rowData" + data);
+        //       this.chartData=data;
+        //     }
+        //   })
+        //   this.cal(this.chartData);
     }
 
     cal(data){
@@ -47,7 +55,7 @@ export class TransactionChartsComponent implements OnInit{
         }
       };
       public pieChartLabels: Label[] = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
-      public pieChartData: number[];
+      public pieChartData: number[] = this.chartAmount;
       public pieChartType: ChartType = 'pie';
       public pieChartLegend = true;
       public pieChartColors = [
